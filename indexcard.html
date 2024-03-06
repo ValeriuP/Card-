@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive card details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="validari.js"defer ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+    
+</head>
+<body>
+    <!-- container principal -->
+    <div class="main_container">
+        <!-- container background -->
+        <div class="main_section">
+            <!-- front card -->
+            <div class="main_front_card">
+                 <div class="card_logo">
+                 </div>
+                <div  id="card-nr" >
+                    <!-- nr.card -->
+                </div>
+                <div class="card_name_data">
+                    <!-- nume  -->
+                <div class="card_name" id="card-name">
+
+                </div>
+                <!-- data expirari -->
+                <div class="card_date" id="card-data">
+
+                </div>
+            </div>
+            </div>
+            <!-- back card -->
+            <div class="main_back_card">
+                <!-- cod de securitate -->
+                <div class="card_cvv" id="card-cvv">
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- container input card -->
+        <div class="main_date_container" id="main-date-container">
+
+        </div>
+        <div class="introduction_container">
+            <!--input intoduction name -->
+            <div class="introduction_name">
+                <label class="intro_label" for="cardholder_name">CARDHOLDER NAME</label><br>
+                <input class="intro_label"  type="text" validate="text" placeholder="e.g. Pacuraru Valeriu" id="cardholder-name">
+                <p class="intro_error" id="intro-error-name"></p>
+            </div>
+            <!-- input introduction namber -->
+            <div class="introduction_namber">
+                <label class="intro_label2" for="cardholder_namber">CARD NAMBER</label><br>
+                <input class="intro_label3" type="text" validate="namber" placeholder="e.g. 1234 5678 9123 0000"maxlength="19" id="cardholder-namber">
+                <p class="intro_error" id="intro-error-namber"></p>
+            </div>
+            <div class="data_cvc">
+                <!-- input introduction mounth -->
+                <div class="intro_day">
+                    <label class="intro_label_day" for="cardholder-day">EXP.DATE</label><br>
+                    <input class="intro_label_day" type="text" validate="number" placeholder="MM" maxlength="2" id="intro-day">
+                     <p class="intro_error" id="intro-error-day"></p>
+                     
+                    
+                </div>
+                <!-- input introduction year -->
+                <div class="intro_year">
+                    <label class="intro_year_text" for="cardholder-year">(Y/Y)</label>
+                    <input class="intro_year_nr" type="text" validate="number" placeholder="YY" maxlength="2" id="intro-year-nr">
+                     <p class="intro_error" id="intro-error-year"></p>
+                </div>
+                <div class="intro_cvc">
+                    <label class="intro_cvc_text" for="intro_cvc">CVC</label>
+                    <input class="intro_cvc_nr" type="text" validate="number" placeholder="123" maxlength="3" id="intro-cvc-nr">
+                    <p class="intro_error" id="intro-error-code"></p>
+                </div>
+                
+
+                
+            </div>
+
+            <div class="buton_validation">
+                <button class="buton_valid" id="buton-valid" onclick="submitValidation()">Confirm</button>
+            </div>
+            <div class="complet_valid_container" id="complete-valid-container">
+                <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+                <h1 class="complete_validation">Thank You !</h1>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
