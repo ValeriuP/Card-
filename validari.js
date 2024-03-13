@@ -4,6 +4,9 @@ class validated{
         this.valid=valid;
     }
 }
+function containsOnlyNumber(inputValue){
+    return /^(\d+ )*(\d+)$/.test(inputValue); 
+}
 
 function validadation(input, output, length=3){
     if(input.value !==""){
@@ -12,12 +15,15 @@ function validadation(input, output, length=3){
                 if(checkLength(input.value, length)){
                     input.style.border="1px solid green"
                     output.innerText="";
+                    console.log("short number green");
                     return new validated(input, true);
                 }
                 else {
-                    output.inerText= "The number is too short";
+                    output.innerText= "The number is too short";
                     input.style.border="1px solid red";
+                    console.log("short number");
                     return new validated(input, false);
+                    
                 }
                
 
@@ -25,11 +31,12 @@ function validadation(input, output, length=3){
             else {
                 output.innerText="Wrong format, numbers only";
                 input.style.border = "1px solid red";
+                console.log("short number  red");
                 return new validated(input, false);
             }
         }
         else{
-            if(!containsOnlyNumbers(input.value)){
+            if(!containsOnlyNumber(input.value)){
                 input.style.border="1px solid green";
                 return new validated(input, true);
             }

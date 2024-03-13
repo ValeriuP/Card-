@@ -47,8 +47,8 @@ function submitValidation(){
     // validarea cardholder 
     validator.push(validadation(cardholderName,invalidNameMessage));
     validator.push(validadation(cardNumber,invalidNumberMessage));
-    validator.push(validadation(expirationDate,invalidExpirationDate));
-    validator.push(validadation(expirationYear, invalidExpirationYeare));
+    validator.push(validadation(expirationDate,invalidExpirationDate,2));
+    validator.push(validadation(expirationYear, invalidExpirationYeare,2));
     validator.push(validadation(securityCode, invalidsecurityCode));
 
 
@@ -80,10 +80,8 @@ function submitValidation(){
 
 }
 
-function verificationsOnlynr(inputValue){
-    return /^(\d+ )*(\d+)$/.test(inputValue); 
-}
+
 
 function checkLength(inputValue, number) {
-    return inputValue.length === number;
+    return inputValue.length >= number;
   }
