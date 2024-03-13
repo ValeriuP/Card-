@@ -69,8 +69,49 @@ function saveData(){
 
 }
 function deleteRow(row){
-    const rowIndex=row.parentNode.parentNode.rowIndex;
+    const rowIndex=row.parentNode.parentNode.rowIndex -1;
     dataTable.deleteRow(rowIndex);
     saveData()
+    
+}
+function viwShift(){
+    const storedData=JSON.parse( localStorage.getItem("dataTableValue"));
+    if(dataTable.childElementCount==0){
+    storedData.forEach(rowData=>{
+        const newRow=dataTable.insertRow();
+        const hoursCell=newRow.insertCell(0);
+        const locationCell=newRow.insertCell(1);
+        const deleteCell=newRow.insertCell(2);
+        hoursCell.textContent=rowData.hours;
+        locationCell.textContent=rowData.location;
+        deleteCell.innerHTML=`<button onclick="deleteRow(this)">Delete</button>`
+    })}
+}
+function sortShift(){
+    const rows=Array.from(dataTable.rows)
+    rows.sort((a,b)=>{
+        const numberA=parseInt(a.cells[0].textContent);
+        const numberB=parseInt(b.cells[0].textContent);
+        return numberA-numberB;
+    })
+        rows.forEach((row)=>{
+            dataTable.appendChild(row);
+
+       
+        saveData()
+    })
+
+}
+function searcShift(){
+    const serchBar= document.getElementById("search-bar");
+    let serchInput=document.createElement("input");
+    serchInput.type="text";
+    serchInput.placeholder="Choose a location";
+    serchInput.classList.add("search_input");
+    serchInput.addEventListener("input",showShifts());
+    serchBar.appendChild(serchInput);
+    serchBar.appendChild(serchInput);
+}
+function showShifts(){
     
 }
