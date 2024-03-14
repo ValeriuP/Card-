@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="validari.js" defer></script>
+    <title>Frontend Mentor | Interactive card details form</title>
+    
+  
+  </head>
+  <body>
+    <div class="main_section">
+      <div class="card_container">
+        <div class="card_front" >
+
+          <div id="shown-namber-card">
+            <!-- Card number -->
+          </div>
+
+          <div class="card_front_details">
+
+            <div id="shown-name-card">
+              <!-- Cardholder Name -->
+            </div>
+
+            <div id="shown-expiration-data-card">
+              <!-- Card Expiration Date -->
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card_back" id="shown-security-code-card">
+          <!-- Card Security Code -->
+        </div>
+      </div>
+
+      <div class="form_container" id="name">
+        <div class="field_container">
+          <label class="field_label" for="cardholder-name">Cardholder Name</label><br />
+          <input class="field_input" id="cardholder-name" type="text" validate="text" placeholder="e.g.Pacuraru"/>
+          <p class="error_container" id="invalid-name-message"></p>
+        </div>
+
+        <div class="field_container" id="number_container">
+          <label class="field_label" for="cardholder-number">Card Number</label><br />
+          <input class="field_input" id="cardholder-number" type="text" validate="number" placeholder="e.g. 1234 5678 9123 0000" maxlength = "19"/>
+          <p class="error_container" id="invalid-number-message"></p>
+        </div>
+
+        <div class="field_container">
+          <label class="field_label" for="expiration_date">Exp. Date (MM/YY)</label><br />
+          <input class="field_input expiration_date" id="expiration_date_month" type="text" validate="number" placeholder="MM" maxlength = "2"/>
+          <input class="field_input expiration_year" id="expiration_date_year" type="text" validate="number" placeholder="YY" maxlength = "2"/>
+          <p class="error_container" id="invalid_expiration_date_message"></p>
+        </div>
+
+        <div class="field_container">
+          <label class="field_label" for="security_code">CVC</label><br />
+          <input class="field_input security_code" id="security_code" type="text"  validate="number" placeholder="e.g. 123" maxlength = "3"/>
+          <p class="error_container" id="invalid_security_code_message"></p>
+        </div>
+
+        <div class="field_container">
+          <button class="field_button" onclick="submitForm()">Confirm</button>
+        </div>
+        
+      </div>
+
+      <!-- Completed state start -->
+      <div class="complete_state_container" id="complete_state_container">
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        <h1 class="complete_state_title">Thank you!</h1>
+        <p>We've added you card details</p>
+        <button class="complete_state_button">Continue</button>
+      </div>
+    </div>
+
+
+  
+  <div class="presentation">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.facebook.com/profile.php?id=100008364315461">Pacuraru Ghe. Valeriu</a>.
+  </div> 
+  </body>
+</html>

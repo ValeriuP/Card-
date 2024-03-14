@@ -15,7 +15,6 @@ function validadation(input, output, length=3){
                 if(checkLength(input.value, length)){
                     input.style.border="1px solid green"
                     output.innerText="";
-                    console.log("short number green");
                     return new validated(input, true);
                 }
                 else {

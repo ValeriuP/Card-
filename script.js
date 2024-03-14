@@ -28,7 +28,7 @@ cardNumber.addEventListener("keyup", () =>{
 })
 function submitValidation(){
     let validator =[];
-    let frontCardNumber = document.getElementById("card-nr");
+    let frontCardNumber = document.getElementById("cardholderName");
     let frontCardName = document.getElementById("card-name");
     let cardFrontExpirationDate =document.getElementById("card-data");
     let cardFrontSecurityCode =document.getElementById("card-cvv");
@@ -79,6 +79,9 @@ function submitValidation(){
     }
 
 }
+const cardHolder=document.getElementById("cardholder-name");
+
+
 
 
 
