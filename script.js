@@ -28,7 +28,7 @@ cardNumber.addEventListener("keyup", () =>{
 })
 function submitValidation(){
     let validator =[];
-    let frontCardNumber = document.getElementById("cardholderName");
+    let frontCardNumberContainer = document.getElementById("cardholderName");
     let frontCardName = document.getElementById("card-name");
     let cardFrontExpirationDate =document.getElementById("card-data");
     let cardFrontSecurityCode =document.getElementById("card-cvv");
@@ -45,7 +45,7 @@ function submitValidation(){
     registeredsecurityCode.classList.add("card-security-code");
 
     // validarea cardholder 
-    validator.push(validadation(cardholderName,invalidNameMessage));
+    validator.push(validadation(invalidNameMessage));
     validator.push(validadation(cardNumber,invalidNumberMessage));
     validator.push(validadation(expirationDate,invalidExpirationDate,2));
     validator.push(validadation(expirationYear, invalidExpirationYeare,2));
@@ -55,7 +55,7 @@ function submitValidation(){
     // verifica imputurile sa fie valide
 
     if(validator.length==5 && validator.every((el) => el.valid ==true)){
-        registeredCardNumber.innerText=cardholderName.value;
+        registeredCardNumber.innerText= cardholderName.value;
         registeredCardholderName.innerText=cardholderName.value;
         registeredExpirationDate.innerText=expirationDate.value + "/" + expirationYear.value;
         registeredsecurityCode.innerText= securityCode.value;
@@ -63,10 +63,10 @@ function submitValidation(){
 
         // afisarea pe card 
 
-        registeredCardNumber.appendChild(registeredCardNumber);
-        registeredCardholderName.appendChild(registeredCardholderName);
-        registeredExpirationDate.appendChild(registeredExpirationDate);
-        registeredsecurityCode.appendChild(registeredsecurityCode);
+        frontCardNumberContainer.appendChild(registeredCardNumber);
+        frontCardName.appendChild(registeredCardholderName);
+        cardFrontExpirationDate.appendChild(registeredExpirationDate);
+        cardFrontSecurityCode.appendChild(registeredsecurityCode);
 
 
         const mainDateContainer =document.getElementById("main-date-container");
