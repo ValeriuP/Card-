@@ -53,7 +53,7 @@ function submitValidation(){
 
 
     // verifica imputurile sa fie valide
-
+    console.log("salut")
     if(validator.length==5 && validator.every((el) => el.valid ==true)){
         registeredCardNumber.innerText= cardholderName.value;
         registeredCardholderName.innerText=cardholderName.value;
@@ -62,7 +62,7 @@ function submitValidation(){
 
 
         // afisarea pe card 
-
+       
         frontCardNumberContainer.appendChild(registeredCardNumber);
         frontCardName.appendChild(registeredCardholderName);
         cardFrontExpirationDate.appendChild(registeredExpirationDate);
@@ -71,8 +71,8 @@ function submitValidation(){
 
         const mainDateContainer =document.getElementById("main-date-container");
         const completValid =document.getElementById("complete-valid-container");
-        mainDateContainer.style.display="none"
-        completValid.style.display= "flex";
+        // mainDateContainer.style.display="none"
+        // completValid.style.display= "flex";
 
 
         

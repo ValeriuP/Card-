@@ -182,5 +182,6 @@
   text-align: center;
 }
 .presentation a {
-  color: hsl(228, 45%, 44%);
+  color: blue;
+  font-size: 10px;
 }

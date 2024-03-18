@@ -62,7 +62,7 @@ function submitForm(){
     registeredExpirationDateContainer.appendChild(registeredExpirationDate);
     registeredSecurityCodeContainer.appendChild(registeredSecurityCode);
 
-    const fromContainer = document.getElementById("name-container");
+    const fromContainer = document.getElementById("card-form");
     const completeStateContainer = document.getElementById("complete_state_container");
     fromContainer.style.display = "none";
     completeStateContainer.style.display = "flex";
