@@ -24,6 +24,13 @@
 border-collapse: collapse;
 
 }
+.delet-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
 th,td{
     border:3px solid rgb(34,193,195);
 }

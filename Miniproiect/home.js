@@ -43,7 +43,7 @@ form.addEventListener("submit",(e)=>{
         const deleteCell=newRow.insertCell(2);
         hoursCell.textContent=hours.value;
         locationCell.textContent=location.value;
-        deleteCell.innerHTML=`<button onclick="deleteRow(this)">Delete</button>`
+        deleteCell.innerHTML=`<button class="delet-btn" onclick="deleteRow(this)">Delete</button>`
 
         saveData();
         const main=document.querySelector(".main");
@@ -104,14 +104,45 @@ function sortShift(){
 }
 function searcShift(){
     const serchBar= document.getElementById("search-bar");
+    let checkInput= serchBar.querySelector("input")
+    // verificare input valoare si nu duplica
+    if(!checkInput){
     let serchInput=document.createElement("input");
     serchInput.type="text";
+
     serchInput.placeholder="Choose a location";
+    serchInput.id ="search_input"
     serchInput.classList.add("search_input");
-    serchInput.addEventListener("input",showShifts());
+    serchInput.addEventListener("input",showShifts);
     serchBar.appendChild(serchInput);
     serchBar.appendChild(serchInput);
+}
 }
 function showShifts(){
+
+    const searchInputVal = document.getElementById("search_input").value;
+    const searchedData = JSON.parse(localStorage.getItem('dataTableValue'));
     
-}
+    let result = searchedData.filter(x => x.location.includes(searchInputVal));
+    let rows = dataTable.rows;
+    for(let row of rows){
+     dataTable.deleteRow(row);
+   }
+   for(let row of rows){
+     dataTable.deleteRow(row);
+   }
+    if(result.length > 0){
+     console.log(result);
+    
+     result.forEach(rowData => {
+       const newRow = dataTable.insertRow();
+       const hoursCell = newRow.insertCell(0);
+       const locationCell = newRow.insertCell(1);
+       const actionCell = newRow.insertCell(2);
+   
+       hoursCell.textContent = rowData.hours;
+       locationCell.textContent = rowData.location;
+       actionCell.innerHTML = '<button class="delete-btn" onclick="deleteRow(this)">Delete</button>';
+     });
+    }
+   }

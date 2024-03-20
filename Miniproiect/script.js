@@ -87,3 +87,4 @@ function isValidEmail(email) {
     // If all conditions pass, the email is considered valid
     return true;
   }
+  
