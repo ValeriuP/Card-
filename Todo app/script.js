@@ -5,7 +5,7 @@ currentlyInput.addEventListener("keydown",(event)=>{
        let itemContainer=document.createElement("div") ;
        let itemBtn=document.createElement("button")
        let itemSpam= document.createElement("span")
-       span.innerText="Complite online JavaScript course"
+    //    span.innerText="Complite online JavaScript course"
        itemContainer.appendChild(itemBtn);
        itemContainer.appendChild(span);
        container.appendChild(itemContainer)
