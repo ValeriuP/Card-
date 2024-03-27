@@ -4,7 +4,7 @@ currentlyInput.addEventListener("keydown",(event)=>{
     if(event.key==="Enter"){
        let itemContainer=document.createElement("div") ;
        let itemBtn=document.createElement("button")
-       let itemSpam= document.createElement("span")
+       let itemSpan = document.createElement("p")
     //    span.innerText="Complite online JavaScript course"
        itemContainer.appendChild(itemBtn);
        itemContainer.appendChild(span);
