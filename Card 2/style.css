@@ -25,6 +25,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    color: white;
     
 
 }
@@ -36,29 +37,37 @@
     margin-top: 25px;
     margin-left: 30px;
 }
-.card_nr{
+.card-front-number{
     /* background-color: beige; */
     width: 300px;
     height: 30px;
-    margin-top: 50px;
+    margin-top: 80px;
     margin-left: 30px;
+    font-size: 25px;
+    
 }
 .card_name_data{
     display: flex;
     flex-direction: row;
+    /* margin-top: 10px; */
+    font-size: 25px;
+
+
+    
 }
 .card_name{
     /* background-color: azure; */
-    width: 200px;
+    width: 300px;
     height: 30px;
     margin-top: 30px;
+    
 }
 .card_date{
     /* background-color: chartreuse; */
     height: 30px;
     width: 50px;
     margin-top:30px ;
-    margin-left: 120px;
+    margin-left: 70px;
     
 }
 .main_back_card{
@@ -161,4 +170,8 @@
 
 .complet_valid_container{
     display: none;
+}
+.attribution{
+    margin-left: 450px;
+
 }

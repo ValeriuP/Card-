@@ -13,7 +13,7 @@ const invalidSecurityCodeMessage = document.getElementById("invalid_security_cod
 cardNumber.addEventListener('keyup', () => {
   let cardNumberValue = cardNumber.value;
   let newValue = '';
-   cardNumberValue = cardNumberValue.replace(/\s/g, ''); //replace whitespace with empty string
+   cardNumberValue = cardNumberValue.replace(/\s/g, ''); //replace whitespace with empty string 
    for(let i = 0; i<cardNumberValue.length; i++){
     if(i%4 == 0 && i>0){
       newValue = newValue.concat(' ');  //insert a space every 4 digits
